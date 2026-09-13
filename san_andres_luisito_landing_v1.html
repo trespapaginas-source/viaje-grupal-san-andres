@@ -26,30 +26,6 @@
 <footer class="footer"><div class="container inner"><div>© 2026 Luisito Viajero · San Andrés 17—20 septiembre</div><div>Política de privacidad · Términos · Política de cancelación</div></div></footer><script>
 lucide.createIcons();
 (function(){
-  var track=document.getElementById('daysTrack');
-  if(!track)return;
-  track.addEventListener('wheel',function(e){
-    if(e.deltaY<0){
-      e.preventDefault();
-      window.scrollBy(0,e.deltaY);
-    }
-  },{passive:false});
-  var touchY=null;
-  track.addEventListener('touchstart',function(e){
-    touchY=e.touches[0].clientY;
-  },{passive:true});
-  track.addEventListener('touchmove',function(e){
-    if(touchY===null)return;
-    var currentY=e.touches[0].clientY;
-    var delta=touchY-currentY;
-    if(delta<0){
-      e.preventDefault();
-      window.scrollBy(0,delta);
-    }
-    touchY=currentY;
-  },{passive:false});
-})();
-(function(){
   var track=document.getElementById('galleryTrack');
   var dotsWrap=document.getElementById('galleryDots');
   if(!track||!dotsWrap)return;
